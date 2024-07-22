@@ -1,0 +1,29 @@
+{
+    "$schema": "https://visionlib.com/documentation/vl.schema.json",
+    "type": "VisionLibTrackerConfig",
+    "version": 1,
+    "tracker": {
+        "type": "holoLensPosterTracker",
+        "version": 1,
+        "parameters": {
+            "imageURI": "project-dir:LeavesPoster.png",
+            "realWidth": 0.269, // Width of the reference image
+            "featurePrediction": false,
+            "extendibleTracking": true
+        }
+    },
+    "input": {
+        "useImageSource": "cameraHoloLens",
+        "imageSources": [
+            {
+                "name": "cameraHoloLens",
+                "type": "camera",
+                "data": {
+                    "undistort": true,
+                    "useColor": false,
+                    "fieldOfView": "narrow"
+                }
+            }
+        ]
+    }
+}
