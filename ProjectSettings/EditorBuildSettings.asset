@@ -8,9 +8,15 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/visionlib_test.unity
     guid: c1be19fab8f97e447a9561e7419c1e65
+  - enabled: 1
+    path: Assets/Scenes/visionlib_final.unity
+    guid: d94e4b58cbe42dd44ad8af39faf751cd
+  - enabled: 0
+    path: Assets/VisionLib HoloLens Examples/ModelTracking/Scenes/HoloLensAutoInitTracking.unity
+    guid: 987dc7b6db1e74a4cb57227992e3259f
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 4af41258e14568d4d8065208d1a67ae2, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: d9606f9442ed6884594e9cd340718f49, type: 2}

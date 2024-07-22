@@ -5,16 +5,17 @@
     "tracker": {
         "type": "multiModelTracker",
         "version": 1,
-        "parameters": {
-            "useColor": false,
-            "metric": "m",
-            "maxFramesFeaturePrediction": 3,
-            "extendibleTracking": true,
-            "maxNumOfCorrespondences": 250,
-            "enableEdgeFilter": false,
-            "allowedNumberOfFramesSLAMPredictionObjectVisible": 45,
-            "maxKLTPredictionFeatures": 40
-        }
+      "parameters": {
+        "modelURI": "project-dir:Head.obj",
+        "useColor": false,
+        "metric": "m",
+        "maxFramesFeaturePrediction": 3,
+        "extendibleTracking": true,
+        "maxNumOfCorrespondences": 250,
+        "enableEdgeFilter": false,
+        "allowedNumberOfFramesSLAMPredictionObjectVisible": 45,
+        "maxKLTPredictionFeatures": 40
+      }
     },
     "input": {
         "useImageSource": "cameraHoloLens",
