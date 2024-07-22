@@ -62,14 +62,14 @@ public class HololensCubeRegistration : MonoBehaviour
         stoptrackingObject.transform.position = trackingObject.transform.position;
         Debug.Log("SetUnTrackingObjectTransform" + trackingObject.transform.position);
         stoptrackingObject.transform.rotation = trackingObject.transform.rotation;
-        trackingObject.SetActive(false);
+        //trackingObject.SetActive(false);
         stoptrackingObject.SetActive(true);
         noitceStateUICtrl.ChangeStateOfModelAssignOnSign();
     }
 
     public void SetTrackingObject() // button event when object track again
     {
-        trackingObject.SetActive(true);
+        //trackingObject.SetActive(true);
         stoptrackingObject.SetActive(false);
         noitceStateUICtrl.ChangeStateOfModelAssignOffSign();
     }
