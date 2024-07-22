@@ -2484,7 +2484,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6327206550241892528, guid: a5b5f8f01b8c2fe4097a51d2e1b64699, type: 3}
       propertyPath: m_Name
-      value: RigsterationCube_Quest Cube
+      value: Rig_Quest Cube
       objectReference: {fileID: 0}
     - target: {fileID: 7449262466389486466, guid: a5b5f8f01b8c2fe4097a51d2e1b64699, type: 3}
       propertyPath: m_LastSelectExited.m_PersistentCalls.m_Calls.Array.size
@@ -3927,18 +3927,6 @@ MonoBehaviour:
         Microsoft.MixedReality.Toolkit.SpatialManipulation
     scaleLogicType:
       reference: Microsoft.MixedReality.Toolkit.SpatialManipulation.ScaleLogic, Microsoft.MixedReality.Toolkit.SpatialManipulation
---- !u!114 &1067852157
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1067852154}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1482ed6bb5c3b844293497bf6e0a8688, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1067852158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4989,7 +4977,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: e7b3963e7b64bd5428c8ca22fc5443a3, type: 2}
     - target: {fileID: 6327206550241892528, guid: a5b5f8f01b8c2fe4097a51d2e1b64699, type: 3}
       propertyPath: m_Name
-      value: RigsterationCube_Hololens Cube
+      value: Rig_Hololens Cube
       objectReference: {fileID: 0}
     - target: {fileID: 7449262466389486466, guid: a5b5f8f01b8c2fe4097a51d2e1b64699, type: 3}
       propertyPath: m_LastSelectExited.m_PersistentCalls.m_Calls.Array.size

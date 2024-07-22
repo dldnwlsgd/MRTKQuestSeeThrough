@@ -35,11 +35,12 @@ public class NoitceStateUICtrl : MonoBehaviourPun
         {
             GameObject sphereSign = spherePhotonView.gameObject;
             sphereSign.GetComponent<MeshRenderer>().material = signOn;
-            
-            if (hololens_t && hololens_b && quest)
-            {
-                finalButton.SetActive(true);
-            }
+        }
+
+        // 최종 버튼 활성화 조건 확인
+        if (hololens_t && hololens_b && quest)
+        {
+            finalButton.SetActive(true);
         }
     }
 
@@ -51,31 +52,63 @@ public class NoitceStateUICtrl : MonoBehaviourPun
         {
             GameObject sphereSign = spherePhotonView.gameObject;
             sphereSign.GetComponent<MeshRenderer>().material = signOff;
+        }
+    }
 
+    [PunRPC]
+    void UpdateHololensT(bool value)
+    {
+        hololens_t = value;
+        CheckFinalButtonState();
+    }
+
+    [PunRPC]
+    void UpdateHololensB(bool value)
+    {
+        hololens_b = value;
+        CheckFinalButtonState();
+    }
+
+    [PunRPC]
+    void UpdateQuest(bool value)
+    {
+        quest = value;
+        CheckFinalButtonState();
+    }
+
+    void CheckFinalButtonState()
+    {
+        if (hololens_t && hololens_b && quest)
+        {
+            finalButton.SetActive(true);
+        }
+        else
+        {
+            finalButton.SetActive(false);
         }
     }
 
     public void ChangeStateOfModelAssignOnSign()
     {
-        hololens_t = true;
+        photonView.RPC("UpdateHololensT", RpcTarget.All, true);
         photonView.RPC("ColorOnChanged", RpcTarget.All, registrationModelsignSphere.GetComponent<PhotonView>().ViewID);
     }
 
     public void ChangeStateOfModelAssignOffSign()
     {
-        hololens_t = false;
+        photonView.RPC("UpdateHololensT", RpcTarget.All, false);
         photonView.RPC("ColorOffChanged", RpcTarget.All, registrationModelsignSphere.GetComponent<PhotonView>().ViewID);
     }
-    
+
     public void ChangeStateOfCubeAssignSign()
     {
-        hololens_b = true;
+        photonView.RPC("UpdateHololensB", RpcTarget.All, true);
         photonView.RPC("ColorOnChanged", RpcTarget.All, registrationCubesignSphere.GetComponent<PhotonView>().ViewID);
     }
 
     public void ChangeStateOfForQuestCubeAssignSign()
     {
-        quest = true;
+        photonView.RPC("UpdateQuest", RpcTarget.All, true);
         photonView.RPC("ColorOnChanged", RpcTarget.All, forQuestregistrationCubessignSphere.GetComponent<PhotonView>().ViewID);
     }
 }

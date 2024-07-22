@@ -48,6 +48,9 @@ MonoBehaviour:
   - RPC_SendPosition
   - ColorOnChanged
   - ColorOffChanged
+  - UpdateHololensB
+  - UpdateHololensT
+  - UpdateQuest
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
