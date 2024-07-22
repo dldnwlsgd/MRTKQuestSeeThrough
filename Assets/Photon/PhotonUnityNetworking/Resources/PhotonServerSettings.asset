@@ -46,6 +46,8 @@ MonoBehaviour:
   - PunRPC_TogglePlacementHints
   - RespawnSpaceship
   - RPC_SendPosition
+  - ColorOnChanged
+  - ColorOffChanged
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

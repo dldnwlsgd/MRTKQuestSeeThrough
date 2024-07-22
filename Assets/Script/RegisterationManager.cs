@@ -7,10 +7,8 @@ using UnityEngine;
 public class RegisterationManager : MonoBehaviour
 {
 
-    public GameObject ownRegistrationCube;
-    public GameObject otherRegistrationCube;
-    public GameObject trackingObject;
-    public GameObject untrackingObject;
+    public GameObject hololensCube;
+    public GameObject questCube;
 
     public GameObject otherPlatformSettingObject;
 
@@ -26,29 +24,21 @@ public class RegisterationManager : MonoBehaviour
 
     }
 
-    // button -> tracking stoped and anchor object to space
-    public void SetUnTrackingObjectTransform()
-    {
-        untrackingObject.transform.position = trackingObject.transform.position;
-        untrackingObject.transform.rotation = trackingObject.transform.rotation;
-        untrackingObject.SetActive(true);
-    }
-
-
-    public void GetPositionRPCdataAndSetObject()
+    
+    public void GetPositionRPCdataAndSetObject() // final button event
     {
 
-        RegisterationCube ownRegCubeScript = ownRegistrationCube.GetComponent<RegisterationCube>();
+        HololensCubeRegistration hololensRegCubeScript = hololensCube.GetComponent<HololensCubeRegistration>();
 
 
-        if (ownRegCubeScript == null)
+        if (hololensRegCubeScript == null)
         {
             Debug.LogError("RegistrationCube script is not assigned.");
             return;
         }
 
-        Vector3 headPosition = ownRegCubeScript.GetPosition();
-        Quaternion headRotation = ownRegCubeScript.GetRotation();
+        Vector3 headPosition = hololensRegCubeScript.GetPosition();
+        Quaternion headRotation = hololensRegCubeScript.GetRotation();
 
         if (headPosition == null || headRotation == null)
         {
@@ -61,11 +51,11 @@ public class RegisterationManager : MonoBehaviour
             // own, other registeration cube must same in other platform
             // therefore you must consider your object alien in your editor
 
-            Vector3 relativePosition = headPosition - ownRegistrationCube.transform.position;
-            Quaternion relativeRotation = Quaternion.Inverse(ownRegistrationCube.transform.rotation) * headRotation;
+            Vector3 relativePosition = headPosition - hololensRegCubeScript.transform.position;
+            Quaternion relativeRotation = Quaternion.Inverse(hololensRegCubeScript.transform.rotation) * headRotation;
 
-            otherPlatformSettingObject.transform.position = relativePosition + otherRegistrationCube.transform.position;
-            otherPlatformSettingObject.transform.rotation = otherRegistrationCube.transform.rotation * relativeRotation;
+            otherPlatformSettingObject.transform.position = relativePosition + questCube.transform.position;
+            otherPlatformSettingObject.transform.rotation = questCube.transform.rotation * relativeRotation;
 
             otherPlatformSettingObject.SetActive(true);
 
